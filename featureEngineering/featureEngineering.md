@@ -38,3 +38,27 @@ so our data which we feed to model will be like (x2 = x<sup>2</sup>  ,y) = (0,0)
 
 the difference from before will be here model will get leaner relation from feature and target value. hence we get much optimal model then before.
 
+
+
+## how to choose if new feature we created, made better model or not ?
+
+to do to that we have to first train our model on given training dataset. and check the score using validation dataset.
+
+now add the newly created feature, in your previous datasets. by creating new column x[newCol] = [mathematicalExpressionOnPreviousFeature].
+
+eg given dataset `D1 = [feature1, feature2, feature3, target]
+
+newly created dataset
+
+ `D2 = `[feature1, feature2, feature3,feature1*feature2, Feature1/feature3, target]
+
+
+
+Okay this is great but there is problem lies in this approch can you guess? 
+
+what will you do if we got a dataset that we have no knowledge before about it, how can we guess which feature is good, or which feature we should multiply like before.
+or if we have given a dataset with 100000 features. how can we check which feature impact the target score more , or which is most important features in this.
+
+## well these is a solution for this problem
+
+the answer lies in  Discovering useful features with `mutual information`.
